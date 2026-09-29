@@ -1,0 +1,27 @@
+services:
+  agent-api:
+    build: .
+    env_file: .env
+    environment:
+      DEV_MCP_URL: http://dev-mcp:8001/mcp
+    ports:
+      - "8000:8000"
+    depends_on:
+      dev-mcp:
+        condition: service_healthy
+
+  dev-mcp:
+    build: .
+    command: ["research-mcp"]
+    environment:
+      DEV_MCP_PORT: "8001"
+      REPO_ROOT: /workspace
+      KNOWLEDGE_ROOT: /workspace/data/knowledge
+      KNOWLEDGE_DB_PATH: /workspace/data/knowledge.db
+    healthcheck:
+      test: ["CMD", "python", "-c", "import socket; s = socket.create_connection(('127.0.0.1', 8001), 2); s.close()"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    ports:
+      - "8001:8001"

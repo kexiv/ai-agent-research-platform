@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "research-agent"
+version = "0.1.0"
+description = "A LangGraph + MCP SQLite FTS5 research assistant for an AI engineering portfolio."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.34",
+  "pydantic-settings>=2.7",
+  "httpx>=0.28",
+  "langgraph>=1.0.0",
+  "mcp>=2.0.0",
+  "langfuse>=4.0.0",
+  "deepeval>=3.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.8",
+]
+
+[project.scripts]
+research-agent = "app.main:run"
+research-mcp = "app.mcp.dev_server:main"
+research-ingest = "app.knowledge:main"
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

@@ -1,0 +1,3 @@
+{"id":"knowledge-001","question":"RAG 系统为什么需要引用来源？","expected":"回答应提到可验证性、降低幻觉或支持追溯。"}
+{"id":"repo-001","question":"搜索代码中与 MCP 超时处理相关的实现","expected":"应尝试调用 search_repo 工具，并说明结果是否找到。"}
+{"id":"issue-001","question":"查询工单 AI-102","expected":"应返回 AI-102 的状态或说明工具不可用。"}
