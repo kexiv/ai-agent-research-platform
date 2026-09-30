@@ -1,6 +1,6 @@
 # Research Agent
 
-一个面向 AI 工程岗位作品集的研发知识库与工单 Agent。项目用 LangGraph 编排 Agent，用 MCP Python SDK 连接本地 SQLite FTS5 知识库和开发工具，用 Langfuse 观察执行链路，用 DeepEval 做回归评测。
+一个面向 AI 工程研发知识库与工单 Agent。项目用 LangGraph 编排 Agent，用 MCP Python SDK 连接本地 SQLite FTS5 知识库和开发工具，用 Langfuse 观察执行链路，用 DeepEval 做回归评测。
 
 ## 当前能力
 
