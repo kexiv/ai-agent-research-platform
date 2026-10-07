@@ -62,7 +62,7 @@ Invoke-RestMethod `
 research-ingest
 ```
 
-索引文件是生成物 `data/knowledge.db`，已加入 `.gitignore`。Agent 通过 MCP 的 `search_knowledge` 工具查询 SQLite FTS5，不需要 Docker、Elasticsearch、对象存储或独立向量数据库。中文检索会额外生成双字词索引，适合这个作品集项目的轻量演示。
+索引文件是生成物 `data/knowledge.db`，已加入 `.gitignore`。Agent 通过 MCP 的 `search_knowledge` 工具查询 SQLite FTS5，不需要 Docker、Elasticsearch、对象存储或独立向量数据库。中文检索会额外生成双字词索引
 
 ## 接入 Langfuse
 
